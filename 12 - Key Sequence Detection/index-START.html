@@ -7,6 +7,24 @@
     <link rel="icon" href="https://fav.farm/🔥" />
   </head>
   <body>
-    <script></script>
+    <script>
+      const result = [];
+      const solution = "wesbos";
+
+      function keydown(e) {
+        result.push(e.key);
+        result.splice(-solution.length - 1, result.length - solution.length);
+
+        if (result.join("") === solution) {
+          console.log("Success!");
+          return; // Exit the function
+        } else {
+          console.log("Not yet");
+        }
+        console.log(result);
+      }
+
+      document.addEventListener("keydown", keydown);
+    </script>
   </body>
 </html>
